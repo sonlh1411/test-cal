@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cal</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="total">Tổng</label>
+        <input id="total" type="number" />
+      </div>
+      <div>
+        <label for="n1">1N</label>
+        <input id="n1" type="number" />
+      </div>
+      <div>
+        <label for="n2">2N</label>
+        <input id="n2" type="number" />
+      </div>
+      <button class="cal">Tính</button>
+    </div>
+    <div>
+      <h3>Kết quả</h3>
+      <p>Tổng số con: <span class="total-count">0</span></p>
+      <p>Số ăn: <span class="match">0</span></p>
+    </div>
+  </body>
+  <script>
+    document.querySelector(".cal").addEventListener("click", (e) => {
+      e.preventDefault();
+      let total = parseInt(document.querySelector("#total").value) || 0;
+      let n1 = parseInt(document.querySelector("#n1").value) || 0;
+      let n2 = parseInt(document.querySelector("#n2").value) || 0;
+      let count = 0;
+      count += (n1 * (n1 - 1)) / 2;
+      for (let i = 1; i <= n2; i++) {
+        count += total - 1;
+      }
+      let totalCount = (total * (total - 1)) / 2;
+      document.querySelector(".total-count").innerHTML = totalCount;
+      document.querySelector(".match").innerHTML = count;
+    });
+  </script>
+</html>
