@@ -4,21 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input {
+        width: 60px;
+        height: 30px;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      .input-form {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+      }
+    </style>
     <title>Cal</title>
   </head>
   <body>
     <div>
-      <div>
-        <label for="total">Tổng</label>
-        <input id="total" type="number" />
-      </div>
-      <div>
-        <label for="n1">1N</label>
-        <input id="n1" type="number" />
-      </div>
-      <div>
-        <label for="n2">2N</label>
-        <input id="n2" type="number" />
+      <div class="input-form">
+        <div class="input-wrapper">
+          <label for="total">Tổng</label>
+          <input id="total" type="number" />
+        </div>
+        <div class="input-wrapper">
+          <label for="n1">1N</label>
+          <input id="n1" type="number" />
+        </div>
+        <div class="input-wrapper">
+          <label for="n2">2N</label>
+          <input id="n2" type="number" />
+        </div>
       </div>
       <button class="cal">Tính</button>
     </div>
