@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
     <style>
       input {
-        width: 60px;
+        width: 80px;
         height: 30px;
+        margin-top: 10px;
+      }
+      button {
+        width: 60px;
+        height: 40px;
       }
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -64,7 +69,7 @@
       let count = 0;
       count += (n1 * (n1 - 1)) / 2;
       for (let i = 1; i <= n2; i++) {
-        count += total - 1;
+        count += total - i;
       }
       let totalCount = (total * (total - 1)) / 2;
       document.querySelector(".total-count").innerHTML = totalCount;
